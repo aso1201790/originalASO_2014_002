@@ -50,7 +50,7 @@
         android:layout_alignRight="@+id/btnBack"
         android:layout_below="@+id/btnMens"
         android:layout_marginTop="76dp"
-        android:text="Button" />
+        android:text="一言チェック" />
 
     <Button
         android:id="@+id/btnBack"
@@ -60,7 +60,7 @@
         android:layout_below="@+id/edtFirst"
         android:layout_marginRight="14dp"
         android:layout_marginTop="55dp"
-        android:text="Button" />
+        android:text="登録" />
 
     <Button
         android:id="@+id/btnMens"
@@ -69,6 +69,6 @@
         android:layout_alignBaseline="@+id/btnBack"
         android:layout_alignBottom="@+id/btnBack"
         android:layout_alignLeft="@+id/edtFirst"
-        android:text="Button" />
+        android:text="メンテ" />
 
 </RelativeLayout>

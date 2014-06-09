@@ -2,14 +2,29 @@ package com.example.originalaso_2014_002;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class MaintenanceActivity extends Activity {
+public class MaintenanceActivity extends Activity implements View.OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO 自動生成されたメソッド・スタブ
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.maintenance_activity);
+		Button btnCancel = (Button)findViewById(R.id.btnCancel);
+		btnCancel.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO 自動生成されたメソッド・スタブ
+		switch(v.getId()){
+		case R.id.btnCancel:
+			finish();
+			break;
+		}
+
 	}
 
 }
