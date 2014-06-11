@@ -32,5 +32,14 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 		onCreate(db);
 
 	}
+	/**
+	 *  引数のフレーズをHitokotoテーブルにインサートするプライベートメソッド
+	 *  @param SQLiteDatabase インサート先DBのインスタンス変数
+	 *  @param inputMsg インサートするメッセージ
+	 */
+	public void insertHitokoto(SQLiteDatabase db, String inputMsg){
+
+		String sqlstr = " insert into Hitokoto (phrase) values('" + inputMsg + "');";
+	}
 
 }
