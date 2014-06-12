@@ -24,6 +24,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		btnHitokoto.setOnClickListener(this);
 		Button btnMens = (Button)findViewById(R.id.btnMens);
 		btnMens.setOnClickListener(this);
+		Button btnTOuroku = (Button)findViewById(R.id.btnTouroku);
+		btnMens.setOnClickListener(this);
 
 		if(sdb == null) {
 			helper = new MySQLiteOpenHelper(getApplicationContext());
