@@ -2,6 +2,8 @@ package com.example.originalaso_2014_002;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -9,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends Activity implements View.OnClickListener{
+
+	SQLiteDatabase sdb = null;
+	MySQLiteOpenHelper helper = null;
 
 
 	@Override
@@ -19,6 +24,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		btnHitokoto.setOnClickListener(this);
 		Button btnMens = (Button)findViewById(R.id.btnMens);
 		btnMens.setOnClickListener(this);
+
+		if(sdb == null) {
+			helper = new MySQLiteOpenHelper(getApplicationContext());
+		}
+		try{
+			sdb = helper.getWritableDatabase();
+		}catch(SQLiteException e){
+			//異常終了
+			return;
+		}
 	}
 
 	@Override
@@ -34,19 +49,48 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		// TODO 自動生成されたメソッド・スタブ
 		Intent intent = null;
 		switch(v.getId()){
-			case R.id.btnHitokoto:
+			case R.id.btnTouroku: //登録ボタンが押された
+				// エディットテキストからの入力内容を取り出す
 				EditText etv = (EditText)findViewById(R.id.edtFirst);
 				String inputMsg = etv.getText().toString();
+
+				// inputMsgがnullでない、かつ、空でない場合のみ、if文内を実行
+				if(inputMsg!=null && !inputMsg.isEmpty()){
+					// MySQLiteOpenHelperのインサートメソッドを呼び出し
+					helper.insertHitokoto(sdb, inputMsg);
+				}
+
+				// 入力欄をクリア
+				etv.setText("");
 
 
 				intent = new Intent(MainActivity.this,HitokotoActivity.class);
 				startActivity(intent);
 				break;
 
-			case R.id.btnMens:
+			case R.id.btnMens: // メンテボタンが押された
+
+				// インテントのインスタンス生成
 				intent = new Intent(MainActivity.this,MaintenanceActivity.class);
 				startActivity(intent);
 				break;
+
+			case R.id.btnHitokoto: //一言チェックボタンが押された
+
+				// MySQLiteOpenHelperのセレクト一言メソッドを呼び出して一言をランダムに取得
+				String strHitokoto = helper.selectRandomHitokoto(sdb);
+
+				// インテントのインスタンス生成
+				intent = new Intent(MainActivity.this, HitokotoActivity.class);
+				// インテントに一言を混入
+				intent.putExtra("hitokoto", strHitokoto);
+
+				// 次画面のアクティビティ起動
+				startActivity(intent);
+				break;
+
+
+
 		}
 	}
 

@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/txvHITOKOTO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -23,8 +23,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignRight="@+id/txvHITOKOTO"
+        android:layout_below="@+id/txvHITOKOTO"
         android:layout_marginRight="30dp"
         android:layout_marginTop="26dp"
         android:text="ひとことを登録"
@@ -47,13 +47,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btnMens"
-        android:layout_alignRight="@+id/btnBack"
+        android:layout_alignRight="@+id/btnTouroku"
         android:layout_below="@+id/btnMens"
         android:layout_marginTop="76dp"
         android:text="一言チェック" />
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnTouroku"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/edtFirst"
@@ -66,8 +66,8 @@
         android:id="@+id/btnMens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnBack"
-        android:layout_alignBottom="@+id/btnBack"
+        android:layout_alignBaseline="@+id/btnTouroku"
+        android:layout_alignBottom="@+id/btnTouroku"
         android:layout_alignLeft="@+id/edtFirst"
         android:text="メンテ" />
 
