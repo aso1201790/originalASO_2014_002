@@ -27,10 +27,10 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f08000a;
         public static final int btnCancel=0x7f080008;
-        public static final int btnHitokoto=0x7f080003;
+        public static final int btnHitokoto=0x7f080005;
         public static final int btnMens=0x7f080004;
         public static final int btnSakujo=0x7f080009;
-        public static final int btnTouroku=0x7f080005;
+        public static final int btnTouroku=0x7f080003;
         public static final int edtFirst=0x7f080002;
         public static final int imageView1=0x7f080006;
         public static final int listView1=0x7f080007;

@@ -24,8 +24,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		btnHitokoto.setOnClickListener(this);
 		Button btnMens = (Button)findViewById(R.id.btnMens);
 		btnMens.setOnClickListener(this);
-		Button btnTOuroku = (Button)findViewById(R.id.btnTouroku);
-		btnMens.setOnClickListener(this);
+		Button btnTouroku = (Button)findViewById(R.id.btnTouroku);
+		btnTouroku.setOnClickListener(this);
 
 		if(sdb == null) {
 			helper = new MySQLiteOpenHelper(getApplicationContext());
@@ -64,10 +64,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
 				// 入力欄をクリア
 				etv.setText("");
-
-
-				intent = new Intent(MainActivity.this,HitokotoActivity.class);
-				startActivity(intent);
 				break;
 
 			case R.id.btnMens: // メンテボタンが押された
