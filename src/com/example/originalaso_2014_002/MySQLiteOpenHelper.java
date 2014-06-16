@@ -87,4 +87,51 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 	}
 
 
+
+	/**
+	 * Hitokoto表から引数(id)で指定した値とがカラム「_id」の値が等しいレコードを削除
+     * @param SQLiteDatabase DELETEアクセスするDBのインスタンス変数
+     * @param id カラム「_id」と比較するために指定する削除条件の値
+     */
+
+	public void deleteHitokoto(SQLiteDatabase db, int id){
+
+		String sqlstr =  " DELETE FROM Hitokoto where _id = " + id + " ;";
+		try {
+			// トランザクション処理
+			db.beginTransaction();
+			db.execSQL(sqlstr);
+
+			// トランザクション成功
+			db.setTransactionSuccessful();
+		} catch (SQLException e) {
+			Log.e("ERROR" , e.toString());
+		}finally {
+			// トランザクション終了
+			db.endTransaction();
+
+		}
+	}
+	public SQLiteCursor selectHitokotoList(SQLiteDatabase db){
+
+		SQLiteCursor cursor = null;
+
+		String sqlstr = " SELECT _id, phrase FROM Hitokoto ORDER BY _id; ";
+		try {
+			cursor = (SQLiteCursor)db.rawQuery(sqlstr, null);
+			if(cursor.getCount()!=0){
+				cursor.moveToFirst();
+			}
+		}catch(SQLException e){
+			Log.e("ERROR", e.toString());
+		}finally{
+
+		}
+		return cursor;
+	}
+
+
+
+
+
 }
