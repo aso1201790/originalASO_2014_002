@@ -22,14 +22,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="戻る" />
+            android:text="戻る"
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/btnSakujo"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="削除" />
+            android:layout_weight="1"
+            android:text="削除"
+            android:textSize="30sp" />
+
     </LinearLayout>
 
 </LinearLayout>

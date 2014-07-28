@@ -4,16 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/txvHITOKOTO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imageView1"
-        android:layout_marginLeft="66dp"
-        android:layout_marginTop="82dp"
-        android:text="戸締りに気を付けよう" />
-
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
@@ -23,5 +13,15 @@
         android:layout_marginTop="51dp"
         android:scaleType="fitXY"
         android:src="@drawable/godzila00201" />
+
+    <TextView
+        android:id="@+id/txvHITOKOTO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:text="戸締りに気を付けよう"
+        android:textSize="40sp" />
 
 </RelativeLayout>
